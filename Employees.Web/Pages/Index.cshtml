@@ -1,0 +1,51 @@
+﻿@page
+@{
+    ViewData["Title"] = "Home page";
+}
+<div>
+    <h2>Employees</h2>
+    <h4>Search by ID or ALL</h4>
+    <input type="text" id="employeeId" size="5" />
+    <input type="button" value="Get Employees" onclick="find();" />
+    <p></p>
+    <table id="employees_table" data-toggle="table">
+        <thead>
+            <tr>
+                <th data-field="id">ID</th>
+                <th data-field="name">Name</th>
+                <th data-field="contractTypeName">Contract Type</th>
+                <th data-field="roleId">Role ID</th>
+                <th data-field="roleName">Role Name</th>
+                <th data-field="roleDescription">Role Description</th>
+                <th data-field="hourlySalary">Hourly Salary</th>
+                <th data-field="monthlySalary">Monthly Salary</th>
+                <th data-field="annualSalary">Annual Salary</th>
+            </tr>
+        </thead>
+    </table>
+    <p id="error" />
+</div>
+
+<script>
+        var uri = 'api/employees';
+        var $table = $('#employees_table');
+
+
+        function find() {
+            var id = $('#employeeId').val();
+
+            $.getJSON(uri + '/' + id)
+                .done(function (data) {
+                    $table.bootstrapTable('destroy');
+                    if (data.length > 0) {
+                        $table.bootstrapTable({ data: data })
+                    } else {
+                        $table.bootstrapTable({ })
+                    }
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $table.bootstrapTable('destroy');
+                    $('#error').text('Error: ' + err);
+                });
+        }
+</script>

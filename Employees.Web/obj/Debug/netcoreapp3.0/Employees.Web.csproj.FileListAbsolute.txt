@@ -1,0 +1,9 @@
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.csprojAssemblyReference.cache
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.csproj.CoreCompileInputs.cache
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.AssemblyInfoInputs.cache
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.AssemblyInfo.cs
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.TagHelpers.input.cache
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.TagHelpers.output.cache
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.dll
+C:\Proy_NET\TestMasGlobal\Employees.Web\obj\Debug\netcoreapp3.0\Employees.Web.pdb

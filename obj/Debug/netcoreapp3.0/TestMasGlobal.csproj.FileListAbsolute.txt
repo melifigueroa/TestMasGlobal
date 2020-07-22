@@ -1,0 +1,7 @@
+C:\Proy_NET\TestMasGlobal\obj\Debug\netcoreapp3.0\TestMasGlobal.csprojAssemblyReference.cache
+C:\Proy_NET\TestMasGlobal\obj\Debug\netcoreapp3.0\TestMasGlobal.csproj.CoreCompileInputs.cache
+C:\Proy_NET\TestMasGlobal\obj\Debug\netcoreapp3.0\TestMasGlobal.MvcApplicationPartsAssemblyInfo.cache
+C:\Proy_NET\TestMasGlobal\obj\Debug\netcoreapp3.0\TestMasGlobal.RazorAssemblyInfo.cache
+C:\Proy_NET\TestMasGlobal\obj\Debug\netcoreapp3.0\TestMasGlobal.RazorAssemblyInfo.cs
+C:\Proy_NET\TestMasGlobal\obj\Debug\netcoreapp3.0\TestMasGlobal.AssemblyInfoInputs.cache
+C:\Proy_NET\TestMasGlobal\obj\Debug\netcoreapp3.0\TestMasGlobal.AssemblyInfo.cs

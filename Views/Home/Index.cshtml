@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Employees List</title>
+</head>
+<body>
+
+    <div>
+        <h2>Employees</h2>
+        <h4>Search by ID</h4>
+        <input type="text" id="employeeId" size="5" />
+        <input type="button" value="Get Employees" onclick="find();" />
+        <p id="employee" />
+        <table id="employees_table"  data-toggle="table">
+            <thead>
+                <tr>
+                    <th data-field="id">ID</th>
+                    <th data-field="name">Name</th>
+                    <th data-field="contractTypeName">Contract Type</th>
+                    <th data-field="roleId">Role ID</th>
+                    <th data-field="roleName">Role Name</th>
+                    <th data-field="roleDescription">Role Description</th>
+                    <th data-field="hourlySalary">Hourly Salary</th>
+                    <th data-field="monthlySalary">Monthly Salary</th>
+                    <th data-field="annualSalary">Annual Salary</th>
+                </tr>
+            </thead>
+        </table> 
+        <p id="error" />
+    </div>
+
+    <script>
+        var uri = 'api/employees';
+        var $table = $('#employees_table');
+
+        $(document).ready(function () {
+            $.getJSON(uri)
+                .done(function (data) {
+                    // On success, 'data' contains a list of products.
+                    console.log("data", data);
+                    /*$.each(data, function (key, item) {
+                        // Add a list item for the product.
+                        console.log(item);
+                        $('<li>', { text: formatItem(item) }).appendTo($('#employees'));
+
+                    });*/
+                    // $table.bootstrapTable({ data: data })
+                    /*
+
+                    $.each(data, function (key, item) {
+                        var $tr = $('<tr>').append(
+                            $('<td>').text(item.id),
+                            $('<td>').text(item.name),
+                            $('<td>').text(item.contractTypeName),
+                            $('<td>').text(item.roleId),
+                            $('<td>').text(item.roleName),
+                            $('<td>').text(item.roleDescription),
+                            $('<td>').text('$' + !isNaN(item.hourlySalary) ? parseFloat(item.hourlySalary).toLocaleString("es-CO") : item.hourlySalary ),
+                            $('<td>').text('$' + item.monthlySalary),
+                            $('<td>').text('$' + item.annualSalary)
+                        ).wrap('<tbody>').appendTo('#employees_table');
+                        console.log($tr.html());
+                    });*/
+                });
+        });
+
+        function formatItem(item) {
+            return item.name + ': $' + item.hourlySalary + ': $' + item.annualSalary;
+        }
+
+        function find() {
+            var id = $('#employeeId').val();
+            if (!!id) {
+                console.log("si tiene id")
+                // uri += + '/' + id
+            }
+            $table.bootstrapTable('destroy');
+
+            $.getJSON(uri + '/' + id)
+                .done(function (data) {
+                   
+                    if (data.length > 0) {
+                        console.log("data id ", data);
+                        $('#employee').text(formatItem(data[0]));
+                        $table.bootstrapTable({ data: data })
+                    } else {
+                        $table.bootstrapTable({ })
+                    }
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $('#error').text('Error: ' + err);
+                });
+        }
+    </script>
+</body>
+</html>
